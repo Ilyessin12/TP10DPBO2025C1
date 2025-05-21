@@ -1,0 +1,221 @@
+:root {
+    --primary: #990000;
+    --primary-dark: #660000;
+    --secondary: #220022;
+    --dark: #111;
+    --light: #f0f0f0;
+    --accent: #cc0000;
+    --text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+body {
+    background-color: #0a0a0a;
+    color: var(--light);
+    font-family: 'Courier New', monospace;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.site-header {
+    background-image: url('https://i.imgur.com/XJBtmLl.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.site-header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.header-content h1 {
+    color: var(--primary);
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: var(--text-shadow);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.header-content p {
+    color: var(--light);
+    text-shadow: var(--text-shadow);
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--secondary);
+    border-bottom: 2px solid var(--primary);
+}
+
+.navbar-nav .nav-link {
+    color: var(--light);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--accent);
+}
+
+.navbar-nav .nav-link:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary);
+    transition: width 0.3s;
+}
+
+.navbar-nav .nav-link:hover:before {
+    width: 100%;
+}
+
+/* Content Area */
+.content-area {
+    background-color: rgba(20, 20, 20, 0.8);
+    border: 1px solid var(--secondary);
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(200, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Tables */
+.table {
+    color: var(--light);
+    background-color: rgba(30, 30, 30, 0.7);
+    border: 1px solid var(--secondary);
+}
+
+.table thead th {
+    background-color: var(--secondary);
+    color: var(--light);
+    border-color: var(--primary);
+}
+
+.table tbody tr:hover {
+    background-color: rgba(153, 0, 0, 0.2);
+}
+
+.table td, .table th {
+    border-color: #330033;
+}
+
+/* Forms */
+.form-control, .form-select {
+    background-color: rgba(30, 30, 30, 0.8);
+    border: 1px solid var(--secondary);
+    color: var(--light);
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: rgba(40, 40, 40, 0.8);
+    border-color: var(--primary);
+    color: var(--light);
+    box-shadow: 0 0 0 0.25rem rgba(153, 0, 0, 0.25);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary-dark);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary);
+}
+
+.btn-danger {
+    background-color: #cc0000;
+    border-color: #aa0000;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--secondary);
+    color: #aaa;
+    border-top: 2px solid var(--primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.digital-noise {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(30px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(50px);
+        opacity: 0.5;
+    }
+}
+
+/* Card styles */
+.card {
+    background-color: rgba(20, 20, 20, 0.9);
+    border: 1px solid var(--primary);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: var(--secondary);
+    color: var(--light);
+    border-bottom: 1px solid var(--primary);
+}
+
+.severity-Critical {
+    background-color: rgba(204, 0, 0, 0.2);
+    border-left: 4px solid #cc0000;
+}
+
+.severity-High {
+    background-color: rgba(255, 102, 0, 0.2);
+    border-left: 4px solid #ff6600;
+}
+
+.severity-Medium {
+    background-color: rgba(255, 204, 0, 0.2);
+    border-left: 4px solid #ffcc00;
+}
+
+.severity-Low {
+    background-color: rgba(40, 167, 69, 0.2);
+    border-left: 4px solid #28a745;
+}
