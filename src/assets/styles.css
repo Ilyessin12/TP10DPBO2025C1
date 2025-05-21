@@ -1,0 +1,269 @@
+:root {
+    --bg-color: #10101a; /* Very dark blue/purple */
+    --surface-color: #1a1a2a; /* Slightly lighter surface */
+    --primary-text-color: #e0e0e0;
+    --secondary-text-color: #a0a0b0;
+    --accent-color-red: #ff3333; /* Chaos;Child Red */
+    --accent-color-blue: #00aaff; /* Bright Blue */
+    --border-color: #303040;
+    --input-bg-color: #252535;
+    --font-body: 'Roboto', sans-serif;
+    --font-header: 'Orbitron', sans-serif; /* Sci-fi/digital look */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+header {
+    background-color: var(--surface-color);
+    border-bottom: 2px solid var(--accent-color-red);
+    padding: 10px 0;
+    margin-bottom: 30px;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-header);
+    color: var(--accent-color-red);
+    font-size: 2em;
+    margin: 0;
+    text-shadow: 0 0 5px var(--accent-color-red);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: var(--accent-color-red);
+    color: var(--bg-color);
+}
+
+h2, h3 {
+    font-family: var(--font-header);
+    color: var(--accent-color-blue);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.content-box {
+    background-color: var(--surface-color);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: var(--surface-color);
+}
+
+table th, table td {
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #2a2a3f; /* Darker header */
+    color: var(--accent-color-blue);
+    font-family: var(--font-header);
+}
+
+table tr:nth-child(even) td {
+    background-color: #202030;
+}
+
+table tr:hover td {
+    background-color: #303045;
+}
+
+/* Common styles for all button-like elements */
+button, 
+.button, /* If an element explicitly has class "button" */
+[class*="button-"], /* Targets any element with a class like button-primary, button-secondary etc. */
+.actions a /* Links within .actions container, ensure they get base styles too */ {
+    display: inline-block;
+    padding: 8px 15px;
+    margin-right: 5px;
+    margin-bottom: 5px; /* For wrapping */
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer; /* Added for better UX on all button-like elements */
+    text-align: center; /* Added for consistency, esp. when display:block */
+    box-sizing: border-box; /* Added for consistent sizing */
+}
+
+.button-primary { /* Simplified selector */
+    background-color: var(--accent-color-red);
+    color: var(--primary-text-color);
+    border: 1px solid var(--accent-color-red);
+}
+.button-primary:hover { /* Adjusted hover to match */
+    background-color: #d62222; /* Darker red */
+    transform: translateY(-1px);
+}
+
+.button-secondary {
+    background-color: var(--accent-color-blue);
+    color: var(--bg-color);
+    border: 1px solid var(--accent-color-blue);
+}
+.button-secondary:hover {
+    background-color: #0088cc; /* Darker blue */
+    transform: translateY(-1px);
+}
+
+.button-danger {
+    background-color: transparent;
+    color: var(--accent-color-red);
+    border: 1px solid var(--accent-color-red);
+}
+.button-danger:hover {
+    background-color: var(--accent-color-red);
+    color: var(--primary-text-color);
+}
+
+.button-edit {
+    background-color: transparent;
+    color: var(--accent-color-blue);
+    border: 1px solid var(--accent-color-blue);
+}
+.button-edit:hover {
+    background-color: var(--accent-color-blue);
+    color: var(--bg-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--secondary-text-color);
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="datetime-local"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--input-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--primary-text-color);
+    box-sizing: border-box; /* Important for 100% width */
+}
+.form-group input[type="text"]:focus,
+.form-group input[type="date"]:focus,
+.form-group input[type="datetime-local"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent-color-blue);
+    box-shadow: 0 0 5px var(--accent-color-blue);
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.detail-item {
+    margin-bottom: 15px;
+}
+.detail-item strong {
+    color: var(--accent-color-blue);
+    min-width: 150px;
+    display: inline-block;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    background-color: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+    color: var(--secondary-text-color);
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    nav ul li {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+    nav ul li a {
+        display: block;
+        text-align: center;
+    }
+    /* Updated selector for responsive button styling */
+    button, 
+    .button,
+    [class*="button-"],
+    .actions a {
+        display: block;
+        width: calc(100% - 10px); /* Account for margin, assuming margin-right: 5px is still relevant or adjust as needed */
+        margin-left: 5px; /* Centering if width is 100% - 10px and has margin-right */
+        margin-right: 5px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
