@@ -33,7 +33,7 @@ INSERT INTO locations (name, district, description) VALUES
 ('Radio Kaikan Building', 'Akihabara', 'Iconic electronics building, site of a crashed time machine and Future Gadget Lab relocation.'),
 ('Shibuya Crossing', 'Shibuya', 'Famous intersection, epicenter of New Generation Madness events and other psychic phenomena.'),
 ('Tanegashima Space Center', 'Tanegashima Island', 'JAXA facility, key location for Robotics;Notes club activities and Kimijima Reports.'),
-('Inokashira Park', 'Kichijoji', 'Park near the Blue Light Cafe, frequented by occult enthusiasts and site of the mass disappearance.'),
+('Inokashira Park', 'Kichijoji', 'Park near the Blue Light Cafe, frequented by occult enthusiasts and site of the mass disappearance.')
 ;
 
 INSERT INTO phenomena_reports (report_title, reported_date, location_id, description, reporter_alias, severity_level) VALUES
